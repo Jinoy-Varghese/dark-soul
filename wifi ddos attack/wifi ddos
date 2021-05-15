@@ -1,0 +1,10 @@
+1.open https://github.com/davidbombal/red-python-scripts/blob/main/wifi_dos_type1.py
+2.create a new file called wifi_ddos.py 
+3.paste the code in new file.
+4.Run python3 wifi_ddos.py
+	sudo python3 wifi_ddos.py
+*---Note that your wifi adapter should be in managed mode ---*
+now select the interface using numbers.
+press ctrl+c when you want to select which wireless network you want to attack.
+now enter the choice.
+

